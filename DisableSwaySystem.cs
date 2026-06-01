@@ -25,8 +25,6 @@ namespace DisablePlacementSway
 
         protected override void OnUpdate()
         {
-            if (!Setting.Instance.DisablePlacementSway)
-                return;
             var job = new SnapSwayJob
             {
                 AnimationType = SystemAPI.GetComponentTypeHandle<Animation>(false),

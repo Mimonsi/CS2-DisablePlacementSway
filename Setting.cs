@@ -1,9 +1,10 @@
-﻿using Colossal;
+using Colossal;
 using Colossal.IO.AssetDatabase;
 using Game.Modding;
 using Game.Settings;
 using Game.UI;
 using Game.UI.Widgets;
+using System;
 using System.Collections.Generic;
 
 namespace DisablePlacementSway
@@ -11,20 +12,36 @@ namespace DisablePlacementSway
     [FileLocation("ModsData/" + nameof(DisablePlacementSway) + "/" + nameof(DisablePlacementSway))]
     public class Setting : ModSetting
     {
-        public static Setting Instance;
         public const string kSection = "Main";
+
+        private bool m_DisablePlacementSway = true;
+
+        /// <summary>
+        /// Invoked whenever <see cref="DisablePlacementSway"/> changes. Wired by Mod.OnLoad
+        /// so the system can be enabled/disabled directly without exposing the setting statically.
+        /// </summary>
+        internal Action<bool> OnDisablePlacementSwayChanged;
+
         public Setting(IMod mod) : base(mod)
         {
         }
 
-
-
-        [SettingsUISection(kSection)] public bool DisablePlacementSway { get; set; } = true;
-        
+        [SettingsUISection(kSection)]
+        public bool DisablePlacementSway
+        {
+            get => m_DisablePlacementSway;
+            set
+            {
+                if (m_DisablePlacementSway == value)
+                    return;
+                m_DisablePlacementSway = value;
+                OnDisablePlacementSwayChanged?.Invoke(value);
+            }
+        }
 
         public override void SetDefaults()
         {
-            DisablePlacementSway = true;
+            m_DisablePlacementSway = true;
         }
     }
 

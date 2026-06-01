@@ -2,6 +2,7 @@
 using Game;
 using Game.Modding;
 using Game.SceneFlow;
+using Game.Tools;
 using Colossal.IO.AssetDatabase;
 
 namespace DisablePlacementSway
@@ -12,6 +13,7 @@ namespace DisablePlacementSway
             .SetShowsErrorsInUI(false);
 
         private Setting m_Setting;
+        private AnimationSystem m_VanillaAnimationSystem;
 
         public void OnLoad(UpdateSystem updateSystem)
         {
@@ -22,13 +24,23 @@ namespace DisablePlacementSway
 
             m_Setting = new Setting(this);
             m_Setting.RegisterInOptionsUI();
-            Setting.Instance = m_Setting;
             GameManager.instance.localizationManager.AddSource("en-US", new LocaleEN(m_Setting));
-
 
             AssetDatabase.global.LoadSettings(nameof(DisablePlacementSway), m_Setting, new Setting(this));
 
-            updateSystem.UpdateAt<DisableSwaySystem>(SystemUpdatePhase.ToolUpdate);
+            updateSystem.UpdateAfter<DisableSwaySystem>(SystemUpdatePhase.ModificationEnd);
+
+            var system = updateSystem.World.GetOrCreateSystemManaged<DisableSwaySystem>();
+            m_VanillaAnimationSystem = updateSystem.World.GetOrCreateSystemManaged<AnimationSystem>();
+
+            void ApplyState(bool disableSway)
+            {
+                system.Enabled = disableSway;
+                m_VanillaAnimationSystem.Enabled = !disableSway;
+            }
+
+            ApplyState(m_Setting.DisablePlacementSway);
+            m_Setting.OnDisablePlacementSwayChanged = ApplyState;
         }
 
         public void OnDispose()
