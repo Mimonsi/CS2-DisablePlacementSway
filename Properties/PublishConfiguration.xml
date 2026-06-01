@@ -1,6 +1,6 @@
 ﻿<Publish>
 	<!--Id must be set in order to update existed mod. it is not required for publishing mod for the first time-->
-	<ModId Value="" />
+	<ModId Value="146160" />
 	<!--Name of the mod to display to players-->
 	<DisplayName Value="Disable Placement Sway" />
 	<!--Short description of the mod-->
@@ -30,7 +30,7 @@ Thanks to krzychu124 for guidance on the correct update phase and code review.
 	<!--Version of the mod-->
 	<ModVersion Value="1.0.0" />
 	<!--Recommended version of the base game to use the mod-->
-	<GameVersion Value="1.5.10*" />
+	<GameVersion Value="1.5.*" />
 	<!--Dependency for the mod, can be set multiple times-->
 	<Dependency Id="" />
 	<!--Required DLC, can be set multiple times. Supported values are "Landmark Buildings", "San Fransisco Set", "Beach Properties", "Urban Promenades", "Modern Architecture"-->
@@ -45,5 +45,5 @@ Thanks to krzychu124 for guidance on the correct update phase and code review.
 	<ExternalLink Type="paypal" Url="https://www.paypal.com/paypalme/KonstantinSchwarze" />
 	<ExternalLink Type="kofi" Url="https://ko-fi.com/mimonsi" />
 	<!--Supported values Public, Private, Unlisted-->
-	<AccessLevel Value="Public" />
+	<AccessLevel Value="Unlisted" />
 </Publish>
