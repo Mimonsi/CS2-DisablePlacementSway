@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisablePlacementSway", "DisablePlacementSway.csproj", "{CAF3FDE6-EFD8-41F7-9D74-6284CDB96BCC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CAF3FDE6-EFD8-41F7-9D74-6284CDB96BCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAF3FDE6-EFD8-41F7-9D74-6284CDB96BCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAF3FDE6-EFD8-41F7-9D74-6284CDB96BCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAF3FDE6-EFD8-41F7-9D74-6284CDB96BCC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
