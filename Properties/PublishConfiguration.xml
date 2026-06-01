@@ -2,36 +2,48 @@
 	<!--Id must be set in order to update existed mod. it is not required for publishing mod for the first time-->
 	<ModId Value="" />
 	<!--Name of the mod to display to players-->
-	<DisplayName Value="DisablePlacementSway" />
+	<DisplayName Value="Disable Placement Sway" />
 	<!--Short description of the mod-->
-	<ShortDescription Value="This is a short description" />
+	<ShortDescription Value="Removes the wobbly spring animation when placing buildings, props, and other objects. Previews follow the cursor instantly." />
 	<!--Long description of the mod. Single line or multi line. Supports minimal markdown subset-->
-	<!--LongDescription Value="This is a long description" /-->
 	<LongDescription>
-This is a long description
+## Disable Placement Sway
+This mod disables the sway animation when placing buildings, props, and other objects. With this mod, previews will follow the cursor instantly without any springy movement.
+This is most noticeable when placing decals.
+
+## Options
+- A single toggle in the mod settings to enable or disable the mod
+
+## Compatibility
+- Should be compatible with any other mod that doesn't replace the Tools AnimationSystem
+
+Thanks to krzychu124 for guidance on the correct update phase and code review.
 	</LongDescription>
 	<!--Thumbnail-->
 	<Thumbnail Value="Properties/Thumbnail.png" />
 	<!--Screenshot, can be set multiple times-->
 	<Screenshot Value="" />
 	<!--Tag, can be set multiple times-->
-	<Tag Value="" />
+	<Tag Value="Code Mod" />
 	<!--Link to the forum post where the mod can be discussed-->
 	<ForumLink Value="" />
 	<!--Version of the mod-->
-	<ModVersion Value="1.0" />
+	<ModVersion Value="1.0.0" />
 	<!--Recommended version of the base game to use the mod-->
-	<GameVersion Value="1.0.*" />
+	<GameVersion Value="1.5.10*" />
 	<!--Dependency for the mod, can be set multiple times-->
 	<Dependency Id="" />
 	<!--Required DLC, can be set multiple times. Supported values are "Landmark Buildings", "San Fransisco Set", "Beach Properties", "Urban Promenades", "Modern Architecture"-->
 	<RequiredDLC Value="" />
 	<!--Change log for new version. Single line or multi line. Supports minimal markdown subset-->
-	<ChangeLog Value="" />
+	<ChangeLog Value="Initial Release" />
 	<!--<ChangeLog>
 	</ChangeLog>-->
 	<!--External link, can be set multiple times. supported types are "discord", "github", "youtube", "twitch", "x", "paypal", "patreon", "buymeacoffee", "kofi", "crowdin", "gitlab", "gofundme"-->
-	<ExternalLink Type="" Url="" />
+	<ExternalLink Type="github" Url="https://github.com/Mimonsi/CS2-DisableSwaySystem" />
+	<ExternalLink Type="discord" Url="https://discord.gg/vd7HXnpPJf" />
+	<ExternalLink Type="paypal" Url="https://www.paypal.com/paypalme/KonstantinSchwarze" />
+	<ExternalLink Type="kofi" Url="https://ko-fi.com/mimonsi" />
 	<!--Supported values Public, Private, Unlisted-->
 	<AccessLevel Value="Public" />
 </Publish>

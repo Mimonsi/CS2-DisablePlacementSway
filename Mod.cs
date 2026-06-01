@@ -27,8 +27,8 @@ namespace DisablePlacementSway
             GameManager.instance.localizationManager.AddSource("en-US", new LocaleEN(m_Setting));
 
             AssetDatabase.global.LoadSettings(nameof(DisablePlacementSway), m_Setting, new Setting(this));
-
-            updateSystem.UpdateAfter<DisableSwaySystem>(SystemUpdatePhase.ModificationEnd);
+            
+            updateSystem.UpdateAt<DisableSwaySystem>(SystemUpdatePhase.ModificationEnd);
 
             var system = updateSystem.World.GetOrCreateSystemManaged<DisableSwaySystem>();
             m_VanillaAnimationSystem = updateSystem.World.GetOrCreateSystemManaged<AnimationSystem>();
